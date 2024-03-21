@@ -1,29 +1,59 @@
-<ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar" style="" >
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+        <img src="{{asset('AdminLTE-3.2.0/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            style="opacity: .8">
+        <span class="brand-text font-weight-light">ガレリ</span>
+    </a>
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center"  href="/">
-                <div class="sidebar-brand-icon">
-                <img src="" alt="" style="width:50px; height:50px;">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{asset('AdminLTE-3.2.0/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a class="d-block"> @auth {{ auth()->user()->username }} @endauth</a>
+            </div>
+        </div>
+
+        <!-- SidebarSearch Form -->
+        <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+                <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+                    aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-sidebar">
+                        <i class="fas fa-search fa-fw"></i>
+                    </button>
                 </div>
-                <div class="sidebar-brand-text mx-3" style="">ガレリ</div>
-            </a>
+            </div>
+        </div>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+       with font-awesome or any other icon font library -->
+                <li class="nav-item menu-open">
+                    <a href="/home" class="nav-link ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Home
+                        </p>
+                    </a>
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="/home">
-                <i class="bi bi-house-door-fill" id="icon" style="color: #F6F6F6"></i>
-                    <span  style="color: #F6F6F6" id="text">Home</span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{{route('page.album')}}">
-                <i class="bi bi-images"  style="color: #F6F6F6;"></i>
-                    <span style="color: #F6F6F6;">Album</span></a>
-            </li>
-
-            <!-- Divider -->
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('page.album')}}" class="nav-link ">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            Album
+                        </p>
+                    </a>
+                    <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
@@ -31,8 +61,8 @@
                 Post
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
+             <!-- Nav Item - Pages Collapse Menu -->
+             <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="bi bi-pin-angle-fill" style="color: #F6F6F6"></i>
@@ -46,8 +76,7 @@
                     </div>
                 </div>
             </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
+                <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item active">
                 <a class="nav-link" href="">
                 <i class="bi bi-chat-right-heart-fill" style="color: #F6F6F6"></i>
@@ -81,3 +110,5 @@
             </div>
 
         </ul>
+    <!-- /.sidebar -->
+</aside>
