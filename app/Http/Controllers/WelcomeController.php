@@ -8,7 +8,7 @@ class WelcomeController extends Controller
 {
     public function index() {
         return view('page.welcome', [
-            "title" => "Welcome"
+            "title" => "Selamat Datang"
         ]);
     }
 }
