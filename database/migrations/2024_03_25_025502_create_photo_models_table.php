@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('album', function (Blueprint $table) {
-            $table->id('AlbumID', 11);
-            $table->string('NamaAlbum', 255);
-            $table->text('Deskripsi');
-            $table->date('TanggalDibuat');
-            $table->integer('UserID');
+        Schema::create('photos', function (Blueprint $t) {
+            $t->id();
+            $t->string('image');
+            $t->text('description');
+            $t->foreignId('albumsid')->contrained('albums')->ondelete('cascade');
+            $t->timestamps();
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('album');
+        Schema::dropIfExists('photos');
     }
 };

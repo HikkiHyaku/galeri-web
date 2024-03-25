@@ -36,6 +36,9 @@ Route::get('/photo', [FotoController::class, 'index'])->name('page.foto')->middl
 // Tambah post
 Route::get('/create-foto', [FotoController::class, 'create'])->name('page.fotoaction.create')->middleware('auth');
 Route::post('/create-foto', [FotoController::class, 'store'])->name('foto.store');
+Route::post('/album/new',[FotoController::class,'album_']);
+Route::post('/photo/new',[FotoController::class,'photo_']);
+Route::get('/detail/album/{id}', [FotoController::class, 'index'])->middleware('auth');
 
 // Login, Logout, resgister
 Route::get('/login', [LoginduaController::class, 'index'])->name('log.login')->middleware('guest');
